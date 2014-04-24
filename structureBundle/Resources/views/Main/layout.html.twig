@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="fr" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>La Niche</title>
+    {%if keywords is defined%}
+        <meta name="keywords" content="{{ keywords }}"/>
+    {%endif%}
+
+    <link rel="stylesheet" type="text/css" href="{{asset('bundles/euroliteriestructure/css/foundation.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('bundles/euroliteriestructure/css/normalize.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('bundles/toilettage/css/toilettage.css')}}">
+    <script src="{{ asset('bundles/euroliteriestructure/js/jquery-2.0.3.min.js')}}"></script>
+    <script src="{{ asset('bundles/euroliteriestructure/js/jquery-ready.js')}}"></script>
+    <script src="{{asset('bundles/yomaah/js/jquery-ui-1.10.4.custom.min.js')}}"></script>
+    <script src="{{ asset('bundles/euroliteriestructure/js/jquery.nivo.slider.js')}}"></script>
+</head>
+<html>
+<body>
+    {%if connectClient is defined and connectClient%}
+        {% include 'ToilettagestructureBundle:Main:barAdmin.html.twig' %}
+    {%endif%}
+    {%if app.session.get('mobile') %}
+        {#<link rel="stylesheet" href="{{ asset('bundles/yomaah/css/main-bar.css') }}" />#}
+        {#{% include 'yomaahBundle:Main:main-bar1.html.twig'%}#}
+        {% include 'ToilettagestructureBundle:Main:menu.html.twig' %}
+    {%else%}
+        <link rel="stylesheet" href="{{ asset('bundles/yomaah/css/main-bar.css') }}" />
+        {% include 'yomaahBundle:Main:main-bar1.html.twig'%}
+        {% include 'ToilettagestructureBundle:Main:menu.html.twig' %}
+    {%endif%}
+    {% if app.session.get('mobile') == false %}
+        <div id="back-top">
+            <a href="#top"><span></span></a>
+        </div>
+    {%endif%}
+    <div class="row">
+        <div class="small-12 columns">
+            <ul class="toilettage-menu">
+                {%for menu in menusClient%}
+                <li><a href="{{ path(menu.path) }}">{{menu.name}}</a></li>
+                {%endfor%}
+            </ul>
+        </div>
+    </div>
+    <div class="corps row">
+        <div class="small-12 columns">
+            <h1 class="main-title">{{position}}</h1>
+    {%block body%}
+    {%endblock%}
+        </div>
+    </div>
+    {%if connectClient is defined and connectClient%}
+        {% include 'yomaahBundle:Toolbar:toolbar.html.twig' %}
+        {% include 'yomaahBundle:Toolbar:addArticleToolBar.html.twig' %}
+        <script type="text/javascript" src="{{asset('bundles/yomaah/js/monHallo.js')}}"></script>
+        <script src="{{asset('bundles/yomaah/js/rangy-core.js')}}"></script>
+        <script src="{{asset('bundles/yomaah/js/hallo.js')}}"></script>
+
+        <link rel="stylesheet" href="{{ asset('bundles/yomaah/css/bootstrap.icons.css') }}" />
+        <link rel="stylesheet" href="{{ asset('bundles/yomaah/css/jquery.toolbars.css') }}" />
+        {#<link rel="stylesheet" href="{{ asset('bundles/EuroLiteriestructure/css/monToolbar.css') }}" />#}
+        <link rel="stylesheet" href="{{ asset('bundles/yomaah/css/adminInterface.css') }}" />
+        <script type="text/javascript" src="{{asset('bundles/yomaah/js/jquery.toolbar.js')}}"></script>
+        <script>setAdminToolbar()</script>
+    {%endif%}
+</body>
+</html>

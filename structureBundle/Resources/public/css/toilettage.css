@@ -1,0 +1,254 @@
+
+@font-face
+{
+    font-family :"IstokWeb";
+    src: url('istok_web/istokweb-regular-webfont.eot');
+    src: url('istok_web/istokweb-regular-webfont.eot?#iefix'),
+         url('istok_web/istokweb-regular-webfont.ttf');
+}
+
+body
+{
+    width : 100%;
+    height : 100%;
+    font-size:1em;
+    font-family: "IstokWeb";
+    background-color:#e8e3e3;
+}
+#top 
+{
+    width : 100%;
+    position:relative;
+    display:block;
+    top:1.7em;
+    height:15em;
+
+} 
+.centre
+{
+    top:2em;
+    position: relative;
+    display : inline-block;
+    height: 1em;
+    margin:0;
+    background-color : #653925;
+    width : 100%;
+}
+.banniere
+{
+    width:100%;
+    display:block;
+    height:15em;
+    background-color : #653925;
+    top:-15em;
+}
+.banniere figure,
+.cote-left,
+.cote-right
+{
+    display:inline-block;
+    position:relative;
+}
+.cote-right
+{
+    width:7em;
+    height:15.1em;
+    top:-0.1em;
+    background:url('../images/right-bandeau.png');
+    background-size:100% 100%;
+    left: 55.1em;
+}
+.cote-left
+{
+    width:7em;
+    top:-0.1em;
+    left:-7em;
+    background:url('../images/left-bandeau.png');
+    background-size:100% 100%;
+    height: 15em;
+}
+
+.banniere figure
+{
+    width : 100%;
+    height: 14em;
+    top:-15em;
+}
+.banniere figure img
+{
+    height:100%;
+    width:100%;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;   
+    border-radius:5px 5px 5px 5px;
+}
+
+.corps
+{
+    background-color:#e8e3e3;
+    height:100%;
+    width:100%;
+    border-image-source: url('../images/left-corp.jpg');
+    display:block;
+    position : relative;
+    min-height:70em;
+    top:0.8em;
+    -moz-box-shadow: 0px 6px 15px 10px #d0cbcb;
+    -webkit-box-shadow: 0px 6px 15px 10px #d0cbcb;
+    -o-box-shadow: 0px 6px 15px 10px #d0cbcb;
+    box-shadow: 0px 6px 15px 10px #d0cbcb;
+    filter:progid:DXImageTransform.Microsoft.Shadow(color=#d0cbcb, Direction=135, Strength=8);
+    -webkit-border-radius: 5px 5px 0px 0px;
+    -moz-border-radius: 5px 5px 0px 0px;   
+    border-radius:5px 5px 0px 0px;
+}
+.toilettage-menu
+{
+    list-style:none;
+    width:100%;
+    display : inline-block;
+    position:relative;
+    height:3em;
+    top:2.0em;
+    padding-left:2.5em;
+}
+.toilettage-menu li
+{
+    display : inline-block;
+    position:relative;
+    width : 9em;
+    line-height:2.6em;
+    margin-right : 2em;
+    border:1px solid black;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;   
+    border-radius:3px 3px 3px 3px;
+    /*background-color : #653925;*/
+    /*background-color:#f3037b;*/
+    background-color: #e11bdf;
+    -webkit-transition: background-color .2s ease-in-out;
+    -moz-transition: background-color .2s ease-in-out;
+    -o-transition: background-color .2s ease-in-out;
+    -ms-transition: background-color .2s ease-in-out;
+    transition: background-color .2s ease-in-out;
+}
+.toilettage-menu li a
+{
+    margin:0 auto;
+    display:block;
+    text-align:center;
+    width:100%;
+    height:2.5em;
+    /*color:#e11bdf;*/
+    /*color:#f3037b;*/
+    color :black;;
+    font-weight:bold;
+    -webkit-transition: color .2s ease-in-out;
+    -moz-transition: color .2s ease-in-out;
+    -o-transition: color .2s ease-in-out;
+    -ms-transition: color .2s ease-in-out;
+    transition: color .2s ease-in-out;
+}
+.main-title
+{
+    font-family:"IstokWeb";
+    text-align:center;
+    display:block;
+    position:relative;
+    /*color:#c81871;*/
+    color:#f3037b;
+    width:100%;
+    margin-bottom:2em;
+}
+
+.toilettage-menu li:hover > a {color:#f3037b;}
+.toilettage-menu li:hover {background-color:black;}
+.art-titre h2
+{
+    font-family:"IstokWeb";
+    font-size:1.5em;
+    text-align:center;
+    /*color:#c81871;*/
+    color:#f3037b;
+    margin-bottom:2em;
+}
+.article
+{
+    margin-bottom:4em;
+}
+.art-content
+{
+    text-align:justify;
+}
+.art-titre h2:before
+{
+    content :'*';
+    color:#c81871;
+}
+.art-titre h2:after
+{
+    content :'*';
+    color:#c81871;
+}
+.articles
+{
+    padding-left:4em;
+    padding-right:4em;
+}
+.devanture
+{
+    width:100%;
+}
+.devanture figure
+{
+    width:49.6%;
+    height:auto;
+    display:inline-block;
+    position:relative;
+}
+.article ul
+{
+    list-style:none;
+    list-style-position:inside;
+    margin-left:1em;
+    margin-top:-1em;
+}
+.article ul li:before
+{
+    content:"-";
+    margin-right:1em;
+}
+
+
+@media screen and (max-width:780px)
+{
+    .articles
+    {
+        padding-left:1.5em;
+        padding-right:1.5em;
+    }
+    body
+    {
+        font-size:0.6em;
+
+    }
+    .toilettage-menu
+    {
+        padding-left:0;
+        margin-left:-0.5em;
+    }
+    .toilettage-menu li
+    {
+        width:6.8em;
+        margin-right:0.01em;
+    }
+    .banniere figure
+    {
+        top:0;
+    }
+    .devanture figure
+    {
+        width:49.5%;
+}
+
+}

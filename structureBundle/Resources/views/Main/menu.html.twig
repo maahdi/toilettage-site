@@ -1,0 +1,12 @@
+<div class="centre"> </div>
+<div id="top">
+    <div class="row">
+        <div class="banniere">
+            {%if app.session.get('mobile') == false%}
+                <div class="cote-left"></div>
+                <div class="cote-right"></div>
+            {%endif%}
+            <figure><img src="{{asset('bundles/toilettage/images/logo.jpg')}}" /></figure>
+        </div>
+    </div>
+</div>
