@@ -1,0 +1,16 @@
+{% extends 'ToilettagestructureBundle:Main:layout.html.twig' %}
+{%block body%}
+    <div class="articles ">
+        {%for article in articles%}
+            <article class="article">
+                <input type="hidden" name="id" value="{{article.id}}"/>
+                <section class="art-content">{{article.artContent | raw }}</section>
+                <article class="galerie">
+                    {%for img in images%}
+                        <figure><img src="{{asset('bundles/toilettage/images/galerie/active/'~img)}}"/></figure> 
+                    {%endfor%}
+                </article>
+            </article>
+        {%endfor%}
+    </div>
+{%endblock%}

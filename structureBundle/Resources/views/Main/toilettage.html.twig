@@ -1,0 +1,41 @@
+{% extends 'ToilettagestructureBundle:Main:layout.html.twig' %}
+{%block body%}
+    <div class="articles ">
+        {%for article in articles%}
+            {%if article.tagName == 'accroche'%}
+                <article class="article">
+                    <input type="hidden" name="id" value="{{article.id}}"/>
+                    <section class="art-content">{{article.artContent | raw }}</section>
+                </article>
+            {%elseif article.tagName == 'nounours' or article.tagName == 'tonte' or article.tagName == 'tonte-chat'%}
+                <article class="article">
+                    <input type="hidden" name="id" value="{{article.id}}"/>
+                    <section class="art-content">{{article.artContent | raw }}</section>
+                    <article class="photo-seule">
+                        <figure><img src="{{asset('bundles/toilettage/images/'~article.tagName~'.jpg')}}"/></figure>
+                    </article>
+                </article>
+            {%elseif article.tagName == 'epilation'%}
+                <article class="article">
+                    <input type="hidden" name="id" value="{{article.id}}"/>
+                    <section class="art-content">{{article.artContent | raw }}</section>
+                    <article class="avant-apres">
+                        <figure class="avant"><span>Avant</span><img src="{{asset('bundles/toilettage/images/avant.jpg')}}"/></figure>
+                        <figure class="apres"><span>Après</span><img src="{{asset('bundles/toilettage/images/apres.jpg')}}"/></figure>
+                    </article>
+                </article>
+            {%elseif article.tagName == 'titre'%}
+                <article class="article">
+                    <input type="hidden" name="id" value="{{article.id}}"/>
+                    <article class="art-titre"><h2>{{article.artTitle}}</h2></article>
+                </article>
+            {%else%}
+                <article class="article">
+                    <input type="hidden" name="id" value="{{article.id}}"/>
+                    <article class="art-titre"><h2>{{article.artTitle}}</h2></article>
+                    <section class="art-content">{{article.artContent | raw }}</section>
+                </article>
+            {%endif%}
+        {%endfor%}
+    </div>
+{%endblock%}
